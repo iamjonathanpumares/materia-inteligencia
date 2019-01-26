@@ -425,3 +425,155 @@ Un sistema que registra los cambios realizados sobre un archivo o conjunto de ar
 ![Distribuido](images/DISTRIBUIDO.png)
 
 Git es un Sistema de Control de Versiones Distribuido.
+
+# Configuración
+
+Lo primero que debemos hacer justo después de instalar git es decirle quienes somos, esto lo hacemos proporcionándole a git nuestro nombre y correo electrónico, lo cual podemos hacerlo con los siguientes comandos
+
+```
+# Indicar nuestro nombre
+git config --global user.name "Nuestro Nombre"
+
+# Indicar nuestro correo electrónico
+git config --global user.email "nuestro@correo.com"
+```
+
+# Repositorio local
+
+Para inicializar un repositorio primero debemos crear un directorio donde vamos a almacenar nuestro proyecto, luego en la consola nos dirigimos a el y una vez dentro ejecutamos
+
+```
+git init
+```
+
+Una vez que estemos trabajando con el código podremos ver el estatus de nuestro proyecto con el comando
+
+```
+git status
+```
+
+Para añadir archivos al stage y poder rastrear los cambios que se hayan tenido sobre ellos ejecutamos
+
+```
+# Para añadir un solo archivo
+git add nombre_del_archivo
+
+# Para añadir todo lo que hay en el directorio actual
+git add --all
+# o bien
+git add .
+```
+
+Por último creamos un commit, los commits deben ir siempre con un mensaje el cuál pasamos con el parámetro -m como se muestra a continuación:
+
+```
+git commit -m 'Primer commit'
+```
+
+Mostrar el historial, en ocasiones vamos a querer ver todas las consolidaciones (commits) que tengamos en nuestro historial.
+
+```
+git log
+```
+
+En ocasiones va a ser necesario que eliminemos un commit, ya sea porque hicimos un commit y queremos volver a como estábamos anteriormente lo cual podemos hacerlo de la siguiente manera
+
+```
+# Soft reset dejará todo lo que tenía nuestro último commit en stage
+git reset --soft IDENTIFICADOR_DEL_COMMIT
+
+# Hard reset eliminará el commit junto con todos sus cambios
+# y no podrán ser accesibles de nuevo
+git reset --hard IDENTIFICADOR_DEL_COMMIT
+```
+
+NOTA: Es muy importante que si van a hacer algún reset lo hagan antes de enviar los cambios al repositorio remoto.
+
+# Trabajando con servidores remotos en Git
+
+Al estar trabajando con git es muy común que queramos almacenar nuestro código en algún servidor remoto, y existen muchas razones para eso, ya sea sólo por seguridad, por si nuestra computadora se daña podamos evitar la pérdida del código, o incluso por si estamos trabajando de manera colaborativa, que de hecho esta es la razón más común para utilizar un servidor remoto. Estos servidores se encargan de almacenar nuestro código junto con el historial, de la misma manera que lo tenemos en nuestra computadora local, teniendo así todo el repositorio disponible para cuando lo necesitemos.
+
+Los servidores más comunes para esto son GitHub, Bitbucket y GitLab, sin embargo también podemos utilizar servidores privados para poder administrarlos nosotros mismos como el caso de GitLab.
+
+Para crear un remoto debemos indicar un comando como éste:
+
+```
+git remote add origin git@github.com:usuario/repositorio.git
+```
+
+Luego tendremos que subir los cambios que tenemos en nuestro repositorio local al remoto:
+
+```
+git push -u origin master
+```
+
+Cuando estamos trabajando con Git podemos hacerlo en tantos equipos como queramos por lo que si estamos en una oficina y subimos cambios a GitHub podemos descargarlos en cualquier lado, supongamos que decidimos seguir trabajando desde casa, si queremos descargar los cambios que hicimos durante el día, nos dirigimos de nuevo al root del proyecto en la terminal y tecleamos lo siguiente:
+
+```
+git pull
+```
+
+Esto descargará todos los cambios que hayamos realizado en nuestro equipo local.
+
+Nota: Para poder hacer esto es necesario que ambos equipos tengan registrados el mismo remoto para poder utilizar el repositorio.
+
+# Trabajando con diferentes ramas (branches) en Git
+
+Un branch es una copia exacta del repositorio en el que podemos trabajar sin comprometer el flujo principal (branch master) y veremos cómo podemos lograrlo.
+
+## Clonar un repositorio
+
+Para clonar nuestro repositorio debemos ir a la terminal y teclear.
+
+```
+git clone git@github.com:usuario/repositorio.git
+```
+
+Esto hará una copia fiel del proyecto, junto con todo el historial de cambios que ha tenido en nuestra computadora local, sin embargo aún no está listo para trabajar ya que primero (en el caso de Laravel) debemos instalar las dependencias de composer.
+
+```
+composer install
+```
+
+Esto nos va a generar el directorio vendor con todo lo que el framework necesita, además debemos generar nuestro archivo .env a partir del archivo de ejemplo que viene con el framework.
+
+Y una vez que lo tengamos debemos indicar nuestras credenciales siendo los más comunes los de la base de datos:
+
+```
+DB_DATABASE=nombre_de_la_bd
+DB_USERNAME=usuario_de_la_bd
+DB_PASSWORD=password_de_la_bd
+```
+
+Y por último generamos la llave del proyecto:
+
+```
+php artisan key:generate
+```
+
+## Crear branches (ramas)
+
+Ya que tengamos nuestro repositorio trabajando es necesario que creemos una rama para empezar a desarrollar los features que el proyecto necesite, para crear los branch existen dos maneras:
+
+```
+# Crear un branch
+git branch nombre_del_branch
+# Posicionarnos en el branch
+git checkout nombre_del_branch
+
+# O bien podemos hacer todo en un solo comando
+git checkout -b nombre_del_branch
+```
+
+Una vez que estemos seguros que el código funciona y que haya pasado todas las pruebas (en caso de estarlas utilizando) debemos incorporar los cambios al flujo principal del proyecto, nuestra rama master.
+
+```
+# Primero nos posicionamos en master
+git checkout master
+
+# Luego unimos la rama en la que estábamos trabajando
+git merge nombre_de_la_rama
+
+# Por último eliminamos la rama que ha sudo unida
+git branch -d nombre_de_la_rama
+```
