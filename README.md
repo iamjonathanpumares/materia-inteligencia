@@ -343,6 +343,117 @@ El método `query()` nos permite ejecutar consultas MySQL para extraer informaci
 
 Las consultas preparadas nos permiten tener consultas más elaboradas que impliquen busqueda de datos por parte del usuario.
 
+# Creando un Inicio de Sesión y Registro de Usuarios
+
+Haremos una práctica en la que vamos a crear tres vistas:
+
+* Login
+* Registro de usuarios
+* Contenido de una página (Acceso restringido)
+
+## Creando la Estructura Base y Contenido a Proteger
+
+Para iniciar nuestra práctica vamos a crear una carpeta login_registro en donde estarán todos nuestros archivos relacionados a la misma práctica.
+
+Una buena práctica es mantener separada la lógica de negocios de la aplicación con la vistas. Para ello vamos a crear cada vista en un archivo y su lógica (controlador) en otro.
+
+Vamos a mantener nuestras vistas dentro de una carpeta views y los controladores dentro de la raíz de la carpeta login_registro.
+
+## Creando el Index y Preparando la Página de Registro
+
+El archivo index.php es la página principal que se ejecutará al momento de acceder a nuestra aplicación.
+
+Vamos a crear el index.php dentro de la raíz de la carpeta login_registro.
+
+Este archivo tendrá una comprobación: Validar si el usuario tiene una sesión iniciada, si es así le redirige al contenido.php y si no lo manda a la página de registro de usuarios.
+
+## Creando el formulario de Registro
+
+El formulario de registro tendrá 3 campos:
+
+* Usuario
+* Contraseña
+* Confirmar contraseña
+
+> Recuerden que es importante que cada campo del formulario tenga el atributo `name` para asegurar que ese campo junto con su valor sea enviado al servidor.
+
+## Creando la vista del Formulario de Login
+
+El login tendrá 2 campos:
+
+* Usuario
+* Contraseña
+
+## Recibiendo los datos del formulario de registro
+
+Ahora nos encargaremos de la lógica de negocios para registrar un usuario. Por lo tanto tenemos que usar el método `post` ya que haremos operaciones con nuestra base de datos, es decir, vamos a agregar un registro a nuestra tabla `usuarios`.
+
+Lo primero que tenemos que hacer es comprobar si el formulario a sido enviado, como ya habiamos visto eso lo hacemos con ayuda de la superglobal `$_SERVER['REQUEST_METHOD']`.
+
+Y posteriormente procederemos a obtener los datos del formulario de registro.
+
+## Validando los datos del formulario de registro
+
+En cada formulario de nuestra aplicación es muy importante validar los campos, ya que esto asegura tener datos correctos en nuestra base de datos.
+
+Cada formulario se validará de manera diferente dependiendo del número de campos que tenga, y cada campo tendrá sus validaciones correspondientes.
+
+Para el campo usuario tenemos las siguientes validaciones:
+
+1. El campo es obligatorio, por lo tanto no debe ir vacio.
+
+2. El campo tiene que estar en minusculas.
+
+3. El campo no debe contener ningún carácter especial solamente letras y números.
+
+4. El campo debe ser único, es decir, no puede haber dos usuarios iguales en la base de datos.
+
+Para el campo password tenemos las siguientes validaciones:
+
+1. El campo es obligatorio, por lo tanto no debe ir vacio.
+
+2. El campo debe coincidir con el campo de confirmar contraseña.
+
+Para el campo confirmar_password tenemos las siguientes validaciones:
+
+1. El campo es obligatorio, por lo tanto no debe ir vacio.
+
+2. El campo debe coincidir con el campo de contraseña.
+
+Una vez validados cada campo sin generar ningún error procederemos a guardar el usuario en la base de datos.
+
+En caso de generar un error al momento de validar un campo, tenemos que mostrar esos errores al usuario para que proceda a corregirlos.
+
+## Validando la Contraseña y Encriptandola
+
+Como mencionamos una de las validaciones que debe tener el campo `password` es que coincida con el campo `confirmar_password`. Esto lo hacemos en una condición comparando el valor de ambos campos. Luego de que se cumpla con esta validación procederemos a encriptar la contraseña con la función `password_hash()`.
+
+> Las contraseñas no deben guardarse en la base de datos en texto plano, ya que esto implica un riesgo de seguridad. Ya que en caso de robo de información, el atacante podría ver la contraseña tal cual fue escrita.
+
+## Creando la Lógica del Formulario de Inicio de Sesión
+
+Lo primero que tenemos que comprobar es si el usuario tiene una sesión iniciada, en caso de tener una sesión mandamos al index.
+
+Si se dan cuenta tenemos las mismas líneas de código en los archivos `contenido.php`, `registrate.php` y `login.php` en donde comprobamos si el usuario tiene una sesión. La manera en la que podemos refactorizar esto es creando una función, para que no pongamos las mismas líneas de código en estos archivos, y solamente mandemos a llamar a nuestra función.
+
+> Podemos crear un archivo `funciones.php` en la que engloben todas las funciones que necesitamos en la aplicación.
+
+Ahora una ves hecho esto, recuerden que tenemos que comprobar si el formulario ha sido enviado a través del método post, luego obtener los datos del formulario.
+
+Tenemos que conectarnos a nuestra base de datos para realizar una consulta en donde buscamos el usuario que nos pasaron a través del formulario.
+
+Aquí si se dan cuenta podemos de igual manera refactorizar nuestro código en la conexión de la base de datos.
+
+Si la consulta devuelve `false` quiere decir que el usuario no existe dentro de la base de datos, en caso de existir ahora tenemos que verificar si la contraseña es correcta a través de la función `password_verify()`.
+
+Ahora si paso las dos comprobaciones inicializamos nuestras variables de sesión y redirigimos al usuario al `contenido.php`. 
+
+## Protegiendo el Contenido y Cerrando Sesión
+
+Como ya mencionamos tenemos que validar si un usuario tiene una sesión iniciada para que pueda acceder al Contenido, ya que se trata de un contenido restringido.
+
+Ya tenemos una sesión, ahora veremos como cerrar esa sesión. Vamos a crear un archivo `cerrar.php` en la raíz de la carpeta `login_registro`.
+
 # Bases de Datos en PHP
 
 * Introducción

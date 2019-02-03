@@ -1,5 +1,10 @@
 <?php
 
+if (isset($_SESSION['usuario']))
+{
+	header('Location: index.php');
+}
+
 $errores = ''; 
 
 // Comprobar si el formulario fue enviado

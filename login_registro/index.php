@@ -6,7 +6,7 @@ if (isset($_SESSION['usuario']))
 }
 else
 {
-	header('Location: login.php');
+	header('Location: registrate.php');
 }
 
 ?>
