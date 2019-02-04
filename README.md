@@ -217,6 +217,85 @@ Las herramientas de negocio son:
 
 * Minería de datos - Extracción de información de las bases de datos acerca del cosumidor, mediante la utilización de aplicaciones que pueden aislar e identificar patrones o tendencias del consumidor en un alto volumen de datos. Hay una gran variedad de técnicas de minería de datos que revelan distintos tipos de patrones. Algunas de las técnicas son métodos estadísticos (Particularmente Estadística de Negocios) y Redes Neurales como formas altamente avanzadas de análisis de datos.
 
+# Toma de decisiones con apoyo de base de datos
+
+## Base de datos multidimensionales
+
+Las bases de datos multidimensionales (BDMB) son un tipo de base de datos optimizada para Data Warehouse que se utilizan principalmente para crear aplicaciones OLAP, una tecnología asociada al acceso y análisis de datos en línea.
+
+## Sistemas de gestión de conocimiento
+
+Son herramientas para llevar a cabo la gestión del conocimiento.
+
+Están manifestados en una variedad de implementaciones:
+
+* Repositorios de documentos.
+
+* Bases de datos de experticia.
+
+* Listas de discusión.
+
+* Sistemas de recuperación específicos del contexto.
+
+## Valor agregado al negocio por el uso de datos
+
+Las organizaciones, independientemente de su tamaño y sector, requieren dotarse de soluciones que les permitan sacar el máximo provecho de su información, para ponerla a disposición de sus diversos tipos de usuarios y así apoyar la toma de decisiones. No hacerlo podría traerles lamentables consecuencias.
+
+Business Intelligence hace posible que muchas preguntas de negocio sean resueltas rápidamente por los propios usuarios. Por ejemplo, si tenemos información periódica sobre las ventas realizadas, sobre el esfuerzo de nuestra red comercial y sobre los pedidos realizados a los proveedores, podemos cruzar toda esta información para analizar 
+
+* ¿En qué zonas se está vendiendo más de cada familia de productos? 
+* ¿Quiénes son nuestros clientes más rentables?
+* ¿Cuál es la relación entre el esfuerzo comercial y las operaciones cerradas? 
+* ¿De qué proveedores se está comprando la mayor parte de los productos vendidos? 
+
+No se trata de analizar la información de un área de la empresa, sino que el objetivo es analizar toda la organización, abarcando cada uno de los ámbitos de la cadena de valor. Precisamente, los sistemas de Business Intelligence se basan en la integración y en la universalización de la información, para dar respuesta a las necesidades analíticas.
+
+Producimos constantemente muchos datos en las organizaciones, pero quizás no tenemos la habilidad de convertirlos en información valiosa. Veamos algunos datos que se pueden tomar de un departamento y qué información se puede obtener.
+
+![Datos](images/DATOS.png)
+
+## La administración de los catálogos maestros
+
+Los sistemas de business intelligence se utilizan principalmente para mejorar la calidad en la toma de decisiones de una empresa. Sin embargo, si los datos incluidos en el data warehouse no tienen calidad, no son completos o tienen duplicidades, los informes extraídos con tu business intelligence, lo único que conseguirán es perjudicar a tu empresa.
+
+Para que un data warehouse puede asegurar su inteligencia, es necesario que reciba el apoyo de un Master Data Management. De esta forma la empresa podrán desarrollar todo su potencial lo que permitirá que la empresa desarrolle el suyo.
+
+Los datos maestros se pueden suministrar a las herramientas de integración de datos del sistema BI de al menos tres maneras:
+
+* Mediante el uso de servicios de integración y emparejamiento de un software de calidad de datos habilitado para SOA para suministrar datos maestros directamente en un data warehouse o para procesos de ETL que alimentan data warehouses.
+
+* Mediante el uso de una solución MDM para crear una fuente de datos virtual de datos maestros a la que puede acceder una herramienta de integración de datos del sistema de BI
+
+* Utilizando un hub de datos MDM construido o comprado como una fuente de datos persistente para una herramienta de integración de datos del sistema de BI
+
+En resumen, podría decirse que la gestión de datos maestros fortalece los sistemas Data warehouse / BI de las siguientes maneras:
+
+* Proporcionando metadatos maestros para su uso en modelos de datos dimensionales y cubos
+
+* Proporcionando datos maestros de alta calidad como fuente de datos de confianza para el procesamiento ETL
+
+* Proporcionando vistas federadas de datos maestros a través de sistemas dispares para la generación de informes
+
+* Seguimiento de versiones de jerarquías a través del tiempo
+
+* Automatizando la recreación de diferentes versiones de una dimensión en un esquema de cubo o estrella para reflejar cambios en jerarquías
+
+* Proporcionando datos confiables para la elaboración de informes y análisis
+
+## La calidad de los datos
+
+En mayor o menor medida, toda organización tiene problemas de calidad de la información que deben corregirse mediante una adecuada arquitectura de datos, que se lleve a cabo una mejora y actualización continuas, para que permitan su explotación con fines comerciales o para su uso en la toma de decisiones.
+
+La calidad de los datos ha de alcanzar a todas las áreas de la empresa, y hacerlo a partir de unos requisitos mínimos establecidos en los orígenes. Gracias a una gestión de datos adaptada a las necesidades de la empresa conseguiremos preservar su calidad cuando éstos se propaguen en el seno de la organización.
+
+Sin embargo, las necesidades de actualización y depuración de los datos no serán las mismas en todas las empresas ni, dentro de ellas, para todo tipo de actuaciones.
+
+Los datos de calidad sometidos a constantes procesos de limpieza proporcionarán una información completa y actualizada y se revelan como imprescindibles para implementar una estrategia de análisis avanzado.
+
+Llegados a este punto, los científicos de datos tendrán la misión de obtener valor de esta montaña de datos estructurados y desestructurados, a partir de los que obtener conocimiento, detectar tendencias y, en suma, extraer una información valiosa que puede resultar decisiva en el actual entorno competitivo.
+
+Los sistemas BI de nueva generación han multiplicado sus posibilidades con respecto a los DW tradicionales, y ello indudablemente favorece la ventaja competitiva para cualquier empresa que pueda obtener rendimiento del masivo volumen de datos que se genera diariamente, a gran velocidad, procedente de distintas fuentes.
+
 # ¿Qué es PHP?
 
 PHP es un lenguaje de programación de propósito general de alto nivel que fue diseñado especialmente para el desarrollo de aplicaciones web.
