@@ -1,3 +1,222 @@
+# Inteligencia de negocios
+
+Business Intelligence es la habilidad para transformar los datos en información, y la información en conocimiento, de forma que se pueda el proceso de toma de decisiones en los negocios.
+
+![Business Intelligence](images/data_info_cogno.gif)
+
+## Historia y antecedentes
+
+![Business Intelligence Evolución](images/business-intelligence-evolucion.jpg)
+
+Dividamos el marco temporal en **cuatro etapas**:
+
+**70´s**
+
+Durante los 70 nacen los **sistemas de gestión de bases de datos** y comenzaron a desarrollar los **primeros modelos relacionales**. Los desarrollos para la ingesta de información son de acceso lento y difícil. La interacción con el usuario comienza a mejorar gracias a la interacción con el scroll.
+
+**80´s**
+
+Aparecen los **primeros PCs** y esto es una verdadera revolución industrial. Se populariza el **uso de las bases de datos**, se **estandariza el lenguaje SQL**.
+
+Los usuarios finales comienzan a sonreír gracias a la aparición de **gráficas e interfaces orientadas a usuarios**.
+
+**90´s**
+
+Nos encontramos con demasiada **información descentralizada y no conectada entre sí** pero en esta década se estandariza la correcta integración de los datos y aparecen las **BBDD distribuidas** gracias a la arquitectura cliente/servidor.
+
+Es la década del **Business Intelligence 1.0**. Aparecen múltiples aplicaciones de BI todavía incapaces de analizar grandes volúmenes de datos en un tiempo aceptable y con limitaciones importantes como un número limitado de fuentes de datos y un precio "inalcanzable". Queda claro que el BI aún no era accesible para todas las empresas.
+
+**2000´s**
+
+Increíble, llegó el boom aéreo y podemos viajar por 25 euros a Londres, pero no es lo único importante, dos conceptos son los que marcan esta etapa **BI2.0** y **Social BI**, además aparece el **SW dedicado a BI**.
+
+* **BI 2.0**: capacidad de los propios usuarios finales de generar contenido y compartirlo. Desde las mismas herramientas de análisis se toman decisiones, se ejecutan, se monitorizan y se vuelven a analizar resultados para empezar con una nueva decisión.
+* **Social BI**: capacidad de integrar datos externos a nuestros sistemas, cruzando información con datos del mundo real que proviene de las redes sociales; pudiendo entender mejor el mercado que hay fuera y ver que vamos en línea al mismo.
+
+Existe capacidad de almacenamiento masivo, alta velocidad de respuesta y modularización de la información.
+
+En la actualidad, nos encontramos con múltiples formas de diseñar **soluciones de Business Intelligence**.
+
+## Conceptos básicos
+
+### Data Warehouse
+
+Un Data Warehouse o "Almacén de datos" son depósitos (o archivos) de información reunida de varios orígenes, almacenada bajo un esquema unificado en un solo sitio.
+
+Una vez reunida, los datos se almacenan por mucho tiempo, lo que permite el acceso a datos históricos.
+
+![Data Warehouse](images/data-warehouse.jpg)
+
+### Data Mart
+
+Un Data Mart, es una base de datos departamental, especializada en el almacenamiento de los datos de un área de negocio específica.
+
+Se caracteriza por disponer la estructura óptima de datos para analizar la información al detalle desde todas las perspectivas que afectan a los procesos de dicho departamento.
+
+Un Data Mart puede ser alimentado desde un Data Warehouse o integrar por sí mismo un compendio de distintas fuentes de información.
+
+![Data Mart](images/data-mart.jpg)
+
+### Tipos de sistemas de información
+
+Los Sistemas de Información que logran la automatización de procesos operativos dentro de una organización, son llamados Sistemas Transaccionales, ya que su función primordial consiste en procesar transacciones tales como pagos, cobros, pólizas, entradas, salidas.
+
+Los Sistemas de Información  que apoyan el proceso de toma de decisiones son:
+
+* Sistemas de Soporte a la Toma de Decisiones.
+
+* Sistemas para la Toma de Decisión de Grupo.
+
+* Sistemas Expertos de Soporte a la Toma de Decisiones.
+
+* Sistema de Información para Ejecutivos.
+
+El tercer tipo de sistema, de acuerdo con su uso u objetivos que cumplen, es el de los Sistemas Estratégicos, los cuales se desarrollan en las organizaciones con el fin de lograr ventajas competitivas, a través del uso de la tecnología de información.
+
+**Sistemas Transaccionales**. Sus principales características son:
+
+* A través de éstos suelen lograrse ahorros significativos de mano de obra, debido a que automatizan tareas operativas de la organización.
+
+* Con frecuencia son el primer tipo de Sistemas de Información que se implanta en las organizaciones. Se empieza apoyando las tareas a nivel operativo de la organización.
+
+* Son intensivos en entrada y salid de información; sus cálculos y procesos suelen ser simples y poco sofisticados.
+
+* Tienen la propiedad de ser recolectores de información, es decir, a través de estos sistemas se cargan las grandes bases de información para su explotación posterior.
+
+* Son fáciles de justificar ante la dirección general, ya que sus beneficios son visibles y palpables.
+
+**Sistemas de Apoyo de las Decisiones**. Las principales características de estos son:
+
+* Suelen introducirse después de haber implantado los Sistemas Transaccionales más relevantes de la empresa, ya que estos últimos constituyen su plataforma de información.
+
+* La información que generan sirve de apoyo a los mandos intermedios y a la alta administración en el proceso de toma de decisiones.
+
+* Suelen ser intensivos en cálculos y escasos en entradas y salidas de información.
+
+* No suelen ahorrar mano de obra. Debido a ello, la justificación económica para el desarrollo de estos sistemas es difícil, ya que no se conocen los ingresos del proyecto de inversión.
+
+* Suelen ser Sistemas de Información interactivos y amigables, con altos estándares de diseño gráfico y visual, ya que están dirigidos al usuario final.
+
+* Apoyan la toma de decisiones que, por su misma naturaleza son repetitivos y de decisiones no estructuradas que no suelen repetirse.
+
+* Estos sistemas pueden ser desarrollados directamente por el usuario final sin la participación operativa de los analistas y programadores del área de informática.
+
+**Sistemas Estratégicos**. Sus principales características son:
+
+* Su función primordial no es apoyar la automatización de procesos operativos ni proporcionar información para apoyar la toma de decisiones.
+
+* Suelen desarrollarse “in house”, es decir, dentro de la organización, por lo tanto no pueden adaptarse fácilmente a paquetes disponibles en el mercado.
+
+* Típicamente su forma de desarrollo es a base de incrementos y a través de su evolución dentro de la organización. Se inicia con un proceso o función en particular y a partir de ahí se van agregando nuevas funciones o procesos.
+
+* Su función es lograr ventajas que los competidores no posean, tales como ventajas en costos y servicios diferenciados con clientes y proveedores. En este contexto, los Sistema Estratégicos son creadores de barreras de entrada al negocio.
+
+* Apoyan el proceso de innovación de productos y proceso dentro de la empresa debido a que buscan ventajas respecto a los competidores y una forma de hacerlo en innovando o creando productos y procesos.
+
+### Variables de medición
+
+Las variables de medición son aquellas que representan la medición matemática de un aspecto del negocio.
+
+Se utilizan para medir la productividad, las perdidas, las ganancias, entre otros aspectos que les pueden definir un sin número de indicadores que le permitirá a un ejecutivo tomar decisiones operativas o estratégicas.
+
+Un ejemplo práctico es que si una empresa vende refrescos las variables de medición le ayudan a saber y a poder graficar cuantos refrescos se venden al día, cual es el más consumido, a qué tipo de personas les gusta el refresco, entre otras cosas se pueden aplicar las variables de medición.
+
+![Variables de medición](images/variables-de-medicion.jpg)
+
+### Variables de análisis
+
+Las variables de análisis son aquellas que se incluyen en el proceso estadístico, son aquellas variables que realizan estudios analíticos sobre las variables de medición.
+
+Las variables de análisis se utilizan principalmente para realizar estudios estadísticos como factores de riesgo, pre valencia del producto en el mercado, entre otras cosas.
+
+Un ejemplo práctico es que se utilizan dentro de la empresa para poder determinar los diversos riesgos, la pre valencia del producto o el servicio dentro del mercado, local, nacional e internacional y también se obtienen fortalezas y debilidades de la empresa.
+
+![Variables de análisis](images/variables-de-analisis.jpg)
+
+## Componentes básicos de la inteligencia de negocios
+
+### Minería de Datos
+
+La minería de datos o exploración de datos es un campo de la estadística y las ciencias de la computación referido al proceso que intenta descubrir patrones en grandes volúmenes de conjuntos de datos.​ Utiliza los métodos de la inteligencia artificial, aprendizaje automático, estadística y sistemas de bases de datos.
+
+### Administración del Conocimiento
+
+La administración del conocimiento implica la conversión del conocimiento tácito (el que sabe un trabajador específico) en explícito (conocimiento documentado y replicable) para convertirlo en un activo estratégico de la organización.
+
+Dicho en otras palabras implica la adecuada utilización de datos e información para transformarlos en conocimiento y entendimiento.
+
+### Aplicaciones Analíticas
+
+1. **Características de las aplicaciones analíticas**.
+
+Una aplicación analítica no es solo un juego de informes creados al azar. Tiene cuatro características importantes las cuales son:
+
+1. **Integradas lógicamente**: significa que algún grado de lógica comercial es incluido en la aplicación que ayude a los usuarios a navegar a través de una serie de tareas.
+
+2. **Informes Interactivos que permitan a los usuarios acceder, analizar y actuar**: Esto significa que los usuarios pueden penetrar con una vista de nivel más alto de un reporte a niveles más bajos o inferiores para adicionar información.
+
+3. **Información Integrada**: Arquitectónicamente una aplicación analítica es un objeto soportado por un repositorio de almacenamiento de datos de la empresa.
+
+4. **Dirección de un dominio comercial**: Las aplicaciones analíticas son definidas por los requerimientos de información de la actividad comercial, como las ventas, servicios o infraestructura.
+
+2. **Elementos de una aplicación analítica**.
+
+Una aplicación analítica está compuesta por seis elementos primordiales los cuales son:
+
+1. **Visualización y percepción**: La visualización consiste en un ambiente grafico amigable al usuario, en la referente a la percepción se enfatiza en la navegación de las áreas de trabajo.
+
+2. **Reportes y Análisis**: Los reportes en vistas de información predefinidas, que pueden presentarse como estáticas o como documentos interactivos, el análisis incorpora sofisticados cálculos, algoritmos estadísticos, y visualizaciones avanzadas para analizar grandes y complejos volumen de información.
+
+3. **El servidor de análisis**: es generalmente el responsable de procesar peticiones utilizando run-time de metadatos definidos y guardándolos en el almacén del servidor.
+
+4. **Lógica de negocios**: Ya se ha mencionado un tipo de lógica comercial, las reglas de navegación de los usuarios es paso a paso a través de reportes, vistas, acciones.
+
+5. **Modelo de Datos**: es el cerebro de aplicaciones analíticas, a menudo trabajando en conjunto con la capa semántica de BI, los modelos de datos son usados en las definiciones de los cubos de OLAP.
+
+6. **El mapeo de las fuentes**: Se definen las transformaciones requeridas para llevar los datos fuentes dentro del modelo de datos designado.
+
+3. Dashboards y Scorecards
+
+Los scorecards y dashboards proporcionan la información del rendimiento empresarial a través de sus distintas áreas.
+
+La popularidad de dashboard está creciendo porque proporciona una interfaz sumamente intuitiva para supervisar y analizar los datos, existen tres tipos de Dashboards los cuales son:
+
+1. **Operacional**: Los usuarios pueden intervenir en los procesos y actividades comerciales para solucionar un problema o capitalizar una oportunidad.
+
+2. **Táctico**: Mide el progreso y actuación de los departamentos o equipos del proyecto contra metas establecidas a través de un gerente.
+
+3. **Estratégico**: Contiene la métrica que se empleará en la estrategia corporativa. Estos Dashboards son en forma de cascada donde en cada nivel y se tiene una versión diferente de métrica moldeada a su dominio comercial.
+
+### Sistemas de Reportes
+
+Los sistemas de reportes tienen como objetivo principal mostrar una visión general de la situación de la empresa. Consecuentemente, estos muestran la situación de las operaciones regulares de la empresa para que los directivos puedan controlar, organizar, planear y dirigir. Los reportes se pueden visualizar, exportar a otros formatos como PDF, HTML, XML, etc. y también se pueden imprimir en papel.
+
+### Multidimensionalidad
+
+La multidimensionalidad dentro de la inteligencia de negocios ayuda a representar los datos en forma cercana a la intuición del usuario y al mismo tiempo resolver problemas planteados en sistemas relacionales.
+
+La información multidimensional se puede encontrar en hojas de calculo, bases de datos, etc. Es una herramienta de B.I. que es capaz de reunir información dispersa en toda la empresa e incluso en diferentes fuentes para así proporcionar a los departamentos la accesibilidad, poder y flexibilidad que necesitan para analizar la información. Por ejemplo, un pronóstico de ventas de un nuevo producto en varias regiones no está completo si no se toma en cuenta también el comportamiento histórico de las ventas de cada región y la forma en que la introducción de nuevos productos se ha desarrollado en cada región en cuestión.
+
+### Data Warehouse
+
+Las características de los data warehouse se representan en la siguiente gráfica:
+
+![Características Data Warehouse](images/caracteristicas-data-warehouse.jpg)
+
+## Herramientas principales de inteligencia de negocios y apoyo
+
+Las herramientas de negocio son:
+
+* Cuadro de mando integral también llamados Dashboard.
+
+* Digital Dashboards o paneles de Control Digital - También conocidos como Business Intelligence Dashboards, o Dashboards Ejecutivos, Son resúmenes visuales de información del negocio, que muestran de una mirada la comprensión del global de las condiciones del negocio mediante métricas e Indicadores Clave de Desempeño (KPIs). Esta es una Herramienta de Inteligencia de Negocios muy popular desde hace unos pocos años.
+
+* OLAP (Procesamiento Analítico en línea por sus siglas en Inglés) (incluido HOLAP, ROLAP and MOLAP)- Es la capacidad de algunos sistemas de soporte de decisiones gerenciales que permiten examinar de manera interactiva grandes volúmenes de información desde varias perspectivas.
+
+* Aplicaciones de Informes, genera vistas de datos agregadas para mantener a la gerencia informada sobre el estado de su negocio.
+
+* Minería de datos - Extracción de información de las bases de datos acerca del cosumidor, mediante la utilización de aplicaciones que pueden aislar e identificar patrones o tendencias del consumidor en un alto volumen de datos. Hay una gran variedad de técnicas de minería de datos que revelan distintos tipos de patrones. Algunas de las técnicas son métodos estadísticos (Particularmente Estadística de Negocios) y Redes Neurales como formas altamente avanzadas de análisis de datos.
+
 # ¿Qué es PHP?
 
 PHP es un lenguaje de programación de propósito general de alto nivel que fue diseñado especialmente para el desarrollo de aplicaciones web.
