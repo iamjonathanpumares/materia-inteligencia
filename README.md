@@ -752,6 +752,43 @@ Como ya mencionamos tenemos que validar si un usuario tiene una sesión iniciada
 
 Ya tenemos una sesión, ahora veremos como cerrar esa sesión. Vamos a crear un archivo `cerrar.php` en la raíz de la carpeta `login_registro`.
 
+# Autocarga de clases y nombres de espacio con PHP
+
+Ahora vamos a organizar nuestro código de una mejor manera, habiamos hablado de los PSR's (PHP Standard Recommendations), y una de las buenas prácticas en PHP es organizar una clase por archivo.
+
+Para ello vamos a crear una carpeta llamada src que significar source, es decir, todo nuestro código fuente de nuestro sistema y tener un archivo index.php, que es nuestro archivo principal.
+
+Ahora si nos damos cuenta nuestro código esta mejor ordenado, sin embargo tenemos otro detalle, y es la cantidad de require que tenemos en nuestro archivo index.php, pero PHP nos ayuda con eso que es llamado la autocarga de clases.
+
+Por esa razón es importante manejar un estandar en donde el nombre de la clase es el nombre del archivo(Mostrar que pasaría si cambiamos el nombre del archivo por otro diferente al nombre de la clase).
+
+Tenemos otro detalle cuando trabajamos con POO, podemos utilizar librerias de terceros, en donde el nombre de sus clases coinciden con el nombre de nuestras clases.
+
+La solución que se utilizaba anteriormente es utilizar un prefijo a nuestras clases. Sin embargo, eso genera nombres de clases demasiados largos, para ello tenemos de los namespaces.
+
+# MVC (Modelo Vista Controlador) en PHP
+
+## ¿Que es el patrón MVC?
+
+El patrón de diseño (de software) MVC se encarga de separar la lógica de negocio de la interfaz de usuario y es el mas utilizado en aplicaciones web, framework, etc, ya que facilita la funcionalidad, mantenibilidad, y escalabilidad del sistema, de forma comoda y sencilla, a la vez que ayuda no mezclar lenguajes de programación en el mismo código, el conocido “código espagueti”. MVC divide las aplicaciones en tres niveles de abstracción:
+
+1. Modelo: es el responsable de gestionar los datos. Es decir las clases y métodos que se comunican directamente con la base de datos.
+2. Vista: es la encargada de mostrar la información al usuario, con de forma gráfica y legible.
+3. Controlador: el intermediario entre la vista y el modelo, se encarga de controlar las interacciones del usuario en la vista, pide los datos al modelo y los devuelve de nuevo a la vista para que esta los muestre al usuario. Es decir las llamadas a clases y métodos, y los datos recibidos de formularios.
+
+## ¿Como funciona el MVC?
+
+El funcionamiento básico del patrón MVC, puede resumirse en:
+
+1. El usuario realiza una petición.
+2. El controlador captura la petición.
+3. Hace la llamada al modelo correspondiente.
+4. El modelo sera el encargado de interactuar con la base de datos.
+5. El controlador recibe la información y la enviá a la vista.
+6. La vista muestra la información.
+
+![Funcionamiento del MVC en PHP](https://www.phpzag.com/wp-content/uploads/2012/07/mvc-php.jpg)
+
 # Bases de Datos en PHP
 
 * Introducción
