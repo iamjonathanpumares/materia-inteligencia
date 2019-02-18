@@ -789,6 +789,22 @@ El funcionamiento básico del patrón MVC, puede resumirse en:
 
 ![Funcionamiento del MVC en PHP](https://www.phpzag.com/wp-content/uploads/2012/07/mvc-php.jpg)
 
+# Front Controller
+
+El patrón de diseño Front Controller consiste en que un solo componente de la aplicación es el responsable de manejar de todas las peticiones HTTP que ésta recibe. Es decir, hay un solo punto de acceso para todas las peticiones.
+
+En Laravel esta función la cumple el archivo index.php que se encuentra en el directorio public. junto con el archivo .htaccess. Pues que -cuando usas el servidor web Apache- este último archivo se encarga de redirigir todas las peticiones a index.php
+
+El directorio public contiene además, las imágenes, archivos CSS y de Javascript que será públicos para los usuarios y visitantes de la aplicación, el resto de archivos donde se encuentra la lógica de la aplicación es inaccesible para ellos, es decir, son privados.
+
+# Eloquent
+
+En Laravel podemos hacer uso de un ORM llamado Eloquent, un ORM es un Mapeo Objeto-Relacional por sus siglas en ingles (Object-Relational mapping), que es una forma de mapear los datos que se encuentran en la base de datos almacenados en un lenguaje de script SQL a objetos de PHP y viceversa, esto surge con la idea de tener un codigo portable con el que no tengamos la necesidad de usar lenguaje SQL dentro de nuetras clases de PHP.
+
+# Controladores
+
+En lugar de definir en su totalidad la lógica de las peticiones en el archivo index.php, es posible que desee organizar este comportamiento usando clases tipo Controller. Los Controladores puede agrupar las peticiones HTTP relacionada con la manipulación lógica en una clase. Los Controladores normalmente se almacenan en el directorio de aplicación app/Controllers/.
+
 # Bases de Datos en PHP
 
 * Introducción
