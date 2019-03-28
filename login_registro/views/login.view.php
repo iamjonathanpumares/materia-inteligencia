@@ -13,7 +13,12 @@
   <body>
     <div class="container">
       <h1>Iniciar sesión</h1>
-      <form>
+      <?php if (!empty($errores)): ?>
+        <div class="alert alert-danger" role="alert">
+          <?php echo $errores; ?>
+        </div>
+      <?php endif; ?>
+      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">Usuario:</label>
           <input type="text" class="form-control" id="id_usuario" name="usuario" placeholder="Enter usuario">

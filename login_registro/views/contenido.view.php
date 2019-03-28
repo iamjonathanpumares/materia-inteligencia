@@ -11,6 +11,7 @@
     <title>Contenido</title>
   </head>
   <body>
+    <a href="cerrar.php" class="btn btn-danger">Cerrar sesión</a>
     <div class="container">
       <h1>Contenido</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

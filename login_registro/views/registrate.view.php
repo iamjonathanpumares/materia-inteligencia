@@ -31,6 +31,31 @@
           <label for="id_confirm_password">Confirmar Password</label>
           <input type="password" class="form-control" id="id_confirm_password" name="confirm_password" placeholder="Password">
         </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Módulo</th>
+              <th>Permisos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($permisos_agrupados as $modulo => $acciones): ?>
+              <tr>
+                <td style="text-transform: capitalize;"><?php echo $modulo; ?></td>
+                <td>
+                  <?php foreach ($acciones as $accion => $value): ?>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="1" name="permisos[<?php echo $modulo; ?>][<?php echo $value; ?>]" id="defaultCheck1">
+                      <label style="text-transform: capitalize;" class="form-check-label" for="defaultCheck1">
+                        <?php echo implode(' ', explode('-', $value)); ?>
+                      </label>
+                    </div>
+                  <?php endforeach; ?>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
